@@ -41,7 +41,7 @@ namespace BrillaChiapas.Pages
             }
             else
             {
-               
+                Console.WriteLine("ESO ES FALLO " + model.AudioAcierto);
             }
         }
 

@@ -25,7 +25,7 @@ namespace BrillaChiapas.Model
             get => rutaAudio2;
             set
             {
-                rutaAudio2 = "sound/acerto.wav";
+                rutaAudio2 = "sound/error.wav";
             }
         }
 
