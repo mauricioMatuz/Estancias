@@ -10,7 +10,6 @@ namespace BrillaChiapas.Pages
     {
         private int score = 0;
         private int currentTime = 20;
-        private int random;
         int hitPosicion = 0;
         private String message = " ";
         bool gameIsRunning = true;
@@ -37,12 +36,12 @@ namespace BrillaChiapas.Pages
             }
             if (model.id == hitPosicion)
             {
-                matriz[posicionPrd] = true;
+                matriz[posicionPrd].Acerto = true;
                 score += 1;
             }
             else
             {
-
+               
             }
         }
 

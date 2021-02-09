@@ -1,6 +1,8 @@
 ﻿
 
-<div class="square @modelPrincipal.style" @onmouseup="ValidateHit"></div>
+<div class="square @modelPrincipal.style" @onmouseup="ValidateHit">
+    <div></div>
+</div>
 @foreach (var sonido in sonidos)
 {
     @if (sonido.reproduciendo)
