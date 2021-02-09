@@ -1,0 +1,54 @@
+﻿
+
+<div class="square @modelPrincipal.style" @onmouseup="ValidateHit"></div>
+@foreach (var sonido in sonidos)
+{
+    @if (sonido.reproduciendo)
+    {
+        <audio src="@sonido.rutaSonido" typeof="audio/wav" autoplay="autoplay"></audio>
+    }
+}
+
+
+@code {
+    [Parameter]
+    public EventCallback onMouseUp
+    {
+        get; set;
+    }
+
+    [Parameter]
+    public PaginaPrincipalModel modelPrincipal
+    {
+        get; set;
+    }
+
+    private void ValidateHit()
+    {
+
+        play(0);
+        onMouseUp.InvokeAsync(new EventArgs());
+    }
+    public async void play(int i)
+    {
+        Console.WriteLine("ENTRO A PLAY");
+        sonidos[i].reproduciendo = false;
+        await InvokeAsync(StateHasChanged);
+        await Task.Delay(1);
+        sonidos[i].reproduciendo = true;
+        await InvokeAsync(StateHasChanged);
+    }
+
+    public class Sonido
+    {
+        public bool reproduciendo { get; set; }
+        public string rutaSonido { get; set; }
+    }
+
+    Sonido[] sonidos = new Sonido[]
+    {
+        new Sonido {reproduciendo = false, rutaSonido = "sound/correcto.wav"},
+        new Sonido {reproduciendo = false, rutaSonido = "sound/error.wav"},
+    };
+
+}

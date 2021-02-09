@@ -1,4 +1,30 @@
 ﻿
+/*imagenes*/
+.mole {
+    background-image: url('../img/prd.png');
+    background-size: cover;
+}
+.acerto {
+    background-image: url('../img/prdTacha.jpg');
+    background-size: cover;
+}
+
+.board {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-content: center;
+    width: 618px;
+    height: 618px;
+}
+
+.square {
+    width: 200px;
+    height: 200px;
+    border-style: solid;
+    border-color: black;
+}
+/*errores*/
 #blazor-error-ui {
     background: lightyellow;
     bottom: 0;
