@@ -9,25 +9,23 @@ namespace BrillaChiapas.Model
     {
         private bool inicio;
         private bool acerto;
-        static string rutaAudio2;
-        static string rutaAudio = "sound/error.wav";
+      
         public int id
         {
             set;get;
+        }
+        public int indice
+        {
+            set; get;
         }
         public String style
         {
             set; get;
         }
 
-        public String AudioAcierto
-        {
-            get => rutaAudio2;
-            set
-            {
-                rutaAudio2 = "sound/error.wav";
-            }
-        }
+      
+
+      
 
         public bool Inicio
         {

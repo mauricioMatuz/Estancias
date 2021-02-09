@@ -10,6 +10,7 @@ namespace BrillaChiapas.Pages
     {
         private int score = 0;
         private int currentTime = 20;
+        private int random;
         int hitPosicion = 0;
         private String message = " ";
         bool gameIsRunning = true;
@@ -29,31 +30,38 @@ namespace BrillaChiapas.Pages
 
         private void MouseAction(PaginaPrincipalModel model)
         {
+            
             Console.WriteLine("valor de random " + posicionPrd);
             foreach (var item in matriz)
             {
                 item.Acerto = false;
             }
+            
             if (model.id == hitPosicion)
             {
                 matriz[posicionPrd].Acerto = true;
                 score += 1;
+                int indice;
+                indice = model.indice = 0;
+                Console.WriteLine("esto es indice en if " + model.indice);
             }
             else
             {
-                Console.WriteLine("ESO ES FALLO " + model.AudioAcierto);
+                int indice;
+                indice = model.indice = 1;
+                Console.WriteLine("esto es indice " + model.indice);
             }
         }
-
         private void MovImagen()
         {
+            int posicionPrd = new Random().Next(0, 12);
             foreach (var item in matriz)
             {
                 item.Inicio = false;
             }
-           
-            matriz[posicionPrd].Inicio = true;
-            hitPosicion = posicionPrd;
+            int posicionPrds = new Random().Next(0, 12);
+            matriz[posicionPrds].Inicio = true;
+            hitPosicion = posicionPrds;
             StateHasChanged();
         }
 
@@ -61,6 +69,8 @@ namespace BrillaChiapas.Pages
         {
             while (gameIsRunning)
             {
+                
+                
                 currentTime--;
                 if (currentTime == 0)
                 {
@@ -69,6 +79,8 @@ namespace BrillaChiapas.Pages
                 }
                 MovImagen();
                 await Task.Delay(1000);
+                
+                model.indice = 3;
             }
         }
 

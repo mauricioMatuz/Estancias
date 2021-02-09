@@ -25,12 +25,14 @@
         get; set;
     }
 
+
     private void ValidateHit()
     {
-
-        play(0);
+        Console.WriteLine(modelPrincipal.indice+" EN CUADRO ");
+        play(modelPrincipal.indice);
         onMouseUp.InvokeAsync(new EventArgs());
     }
+
     public async void play(int i)
     {
         Console.WriteLine("ENTRO A PLAY");
@@ -51,6 +53,7 @@
     {
         new Sonido {reproduciendo = false, rutaSonido = "sound/correcto.wav"},
         new Sonido {reproduciendo = false, rutaSonido = "sound/error.wav"},
+        new Sonido {reproduciendo = false, rutaSonido = "sound/movimiento.wav"},
     };
 
 }
