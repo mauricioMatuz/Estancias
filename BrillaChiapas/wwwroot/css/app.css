@@ -8,6 +8,54 @@
     background-image: url('../img/prdTacha.jpg');
     background-size: cover;
 }
+.pri {
+    background-image: url('../img/pri.png');
+    background-size: cover;
+}
+.ciudadano {
+    background-image: url('../img/ciudadano.png');
+    background-size: cover;
+}
+.independiente {
+    background-image: url('../img/independiente.png');
+    background-size: contain;
+}
+.morena {
+    background-image: url('../img/morena.png');
+    background-size: cover;
+    align-content: center;
+}
+
+.pan {
+    background-image: url('../img/pan.png');
+    background-size: cover;
+}
+
+.proge {
+    background-image: url('../img/proge.png');
+    background-size: cover;
+}
+
+.pt {
+    background-image: url('../img/pt.png');
+    background-size: cover;
+}
+
+.social {
+    background-image: url('../img/social.png');
+    background-size: cover;
+}
+
+.solidaridad {
+    background-image: url('../img/solidaridad.jpg');
+    background-size: cover;
+}
+
+.verde {
+    background-image: url('../img/verde.png');
+    background-size: cover;
+}
+/*fin imagen*/
 
 .board {
     display: flex;

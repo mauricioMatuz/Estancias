@@ -18,14 +18,11 @@ namespace BrillaChiapas.Model
         {
             set; get;
         }
+
         public String style
         {
             set; get;
         }
-
-      
-
-      
 
         public bool Inicio
         {
@@ -59,16 +56,171 @@ namespace BrillaChiapas.Model
                 }
             }
         }
-        public class Sonido
+
+        public bool Pri
         {
-            public bool reproduciendo { get; set; }
-          public String rutaSonido { get; set; }
+            get => inicio;
+            set
+            {
+                inicio = value;
+                if (inicio)
+                {
+                    style = "pri";
+                }
+                else
+                {
+                    style = "";
+                }
+            }
         }
-        
-        Sonido[] sonidos = new Sonido[]
+        public bool Ciudadano
         {
-        new Sonido{ reproduciendo = false, rutaSonido = "sound/correcto.wav"},
-        };
+            get => inicio;
+            set
+            {
+                inicio = value;
+                if (inicio)
+                {
+                    style = "ciudadano";
+                }
+                else
+                {
+                    style = "";
+                }
+            }
+        }
+        public bool Independiente
+        {
+            get => inicio;
+            set
+            {
+                inicio = value;
+                if (inicio)
+                {
+                    style = "independiente";
+                }
+                else
+                {
+                    style = "";
+                }
+            }
+        }
+
+        public bool Morena
+        {
+            get => inicio;
+            set
+            {
+                inicio = value;
+                if (inicio)
+                {
+                    style = "morena";
+                }
+                else
+                {
+                    style = "";
+                }
+            }
+        }
+
+        public bool Pan
+        {
+            get => inicio;
+            set
+            {
+                inicio = value;
+                if (inicio)
+                {
+                    style = "pan";
+                }
+                else
+                {
+                    style = "";
+                }
+            }
+        }
+        public bool Proge
+        {
+            get => inicio;
+            set
+            {
+                inicio = value;
+                if (inicio)
+                {
+                    style = "proge";
+                }
+                else
+                {
+                    style = "";
+                }
+            }
+        }
+
+        public bool Pt
+        {
+            get => inicio;
+            set
+            {
+                inicio = value;
+                if (inicio)
+                {
+                    style = "pt";
+                }
+                else
+                {
+                    style = "";
+                }
+            }
+        }
+        public bool Social
+        {
+            get => inicio;
+            set
+            {
+                inicio = value;
+                if (inicio)
+                {
+                    style = "social";
+                }
+                else
+                {
+                    style = "";
+                }
+            }
+        }
+
+        public bool Solidaridad
+        {
+            get => inicio;
+            set
+            {
+                inicio = value;
+                if (inicio)
+                {
+                    style = "solidaridad";
+                }
+                else
+                {
+                    style = "";
+                }
+            }
+        }
+        public bool Verde
+        {
+            get => inicio;
+            set
+            {
+                inicio = value;
+                if (inicio)
+                {
+                    style = "verde";
+                }
+                else
+                {
+                    style = "";
+                }
+            }
+        }
 
     }
 }

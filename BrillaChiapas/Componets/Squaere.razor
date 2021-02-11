@@ -1,6 +1,8 @@
 ﻿
 
 <div class="square @modelPrincipal.style" @onmouseup="ValidateHit">
+    
+   
     <div></div>
 </div>
 @foreach (var sonido in sonidos)
@@ -28,14 +30,14 @@
 
     private void ValidateHit()
     {
-        Console.WriteLine(modelPrincipal.indice+" EN CUADRO ");
-        play(modelPrincipal.indice);
         onMouseUp.InvokeAsync(new EventArgs());
+        play(modelPrincipal.indice);
+        Console.WriteLine("ESO ES INDICE " + modelPrincipal.indice);
     }
 
     public async void play(int i)
     {
-        Console.WriteLine("ENTRO A PLAY");
+        Console.WriteLine("MODELITO XD " + modelPrincipal.indice);
         sonidos[i].reproduciendo = false;
         await InvokeAsync(StateHasChanged);
         await Task.Delay(1);
@@ -53,7 +55,6 @@
     {
         new Sonido {reproduciendo = false, rutaSonido = "sound/correcto.wav"},
         new Sonido {reproduciendo = false, rutaSonido = "sound/error.wav"},
-        new Sonido {reproduciendo = false, rutaSonido = "sound/movimiento.wav"},
     };
 
 }
