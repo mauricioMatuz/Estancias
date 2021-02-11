@@ -1,11 +1,11 @@
 ﻿
 /*imagenes*/
 .mole {
-    background-image: url('../img/prd.png');
+    background-image: url('../img/rd.png');
     background-size: cover;
 }
 .acerto {
-    background-image: url('../img/prdTacha.jpg');
+    background-image: url('../img/prdTacha.png');
     background-size: cover;
 }
 .pri {
@@ -17,11 +17,11 @@
     background-size: cover;
 }
 .independiente {
-    background-image: url('../img/independiente.png');
+    background-image: url('../img/candidato.png');
     background-size: contain;
 }
 .morena {
-    background-image: url('../img/morena.png');
+    background-image: url('../img/amlo.png');
     background-size: cover;
     align-content: center;
 }
@@ -32,7 +32,7 @@
 }
 
 .proge {
-    background-image: url('../img/proge.png');
+    background-image: url('../img/redes.png');
     background-size: cover;
 }
 
