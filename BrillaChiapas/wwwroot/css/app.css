@@ -1,4 +1,52 @@
-﻿
+﻿html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: "Roboto Mono", monospace;
+    font-size: 1.2rem;
+    line-height: 2;
+}
+/**globales*/
+.contenedor {
+    max-width: 120rem;
+    margin: 0 auto;
+}
+
+.seccion {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+/*CODIGO*/
+.board {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    width: 60rem;
+    height: 60rem;
+    margin: auto;
+}
+
+.square {
+    width: 20rem;
+    height: 20rem;
+    border-style: solid;
+    border-color: black;
+}
+
+.fondo {
+    background-size: auto;
+    background: linear-gradient(to right, #fa709a 0%, #fee140 100%);
+}
+
 /*imagenes*/
 .mole {
     background-image: url('../img/rd.png');
@@ -57,21 +105,13 @@
 }
 /*fin imagen*/
 
-.board {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    align-content: center;
-    width: 618px;
-    height: 618px;
-}
 
-.square {
-    width: 200px;
-    height: 200px;
-    border-style: solid;
-    border-color: black;
-}
+
+
+/**FIN DE DIV*/
+
+
+
 /*errores*/
 #blazor-error-ui {
     background: lightyellow;
@@ -91,3 +131,26 @@
         right: 0.75rem;
         top: 0.5rem;
     }
+  
+    @media screen and (max-width: 800px){
+     
+        .fondo {
+            background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+        }
+        .board {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: center;
+            align-items: center;
+            width: 55rem;
+            height: 55rem;
+            margin: auto;
+        }
+        .square {
+            width: 15rem;
+            height: 15rem;
+            border-style: solid;
+            border-color: black;
+        }
+    }
+
