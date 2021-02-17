@@ -1,0 +1,29 @@
+﻿@page "/difi"
+
+<h1>SELECCIONES UN NIVEL</h1>
+<button @onmouseup="()=>Normal()">NORMAL</button>
+<button @onmouseup="()=>Dificil()">dificil</button>
+
+
+@code {
+
+    [Parameter]
+    public PaginaPrincipalModel modelPrincipal
+    {
+        get; set;
+
+    }
+
+    public void Normal()
+    {
+        Console.WriteLine("SI ENTRO");
+        modelPrincipal.nivel = 2500;
+    }
+
+    public void Dificil()
+    {
+        Console.WriteLine("SI ENTRO");
+        modelPrincipal.nivel = 1250;
+    }
+
+}

@@ -49,7 +49,7 @@ namespace BrillaChiapas.Pages
                 item.Solidaridad = false;
                 item.Verde = false;
             }
-             posicionPrds = Random(0, 12);
+            posicionPrds = Random(0, 12);
             int a = 0;
             while (a < 12)
             {
@@ -80,6 +80,16 @@ namespace BrillaChiapas.Pages
             }
             hitPosicion = posicionPrds[0];
             StateHasChanged();
+        }
+
+        private async Task BotonReicioAsync() {
+            score = 0;
+            currentTime = 20;
+            hitPosicion = 0;
+            message = " ";
+            gameIsRunning = true;
+            await game();
+
         }
         private void MouseAction(PaginaPrincipalModel model)
         {
@@ -143,8 +153,10 @@ namespace BrillaChiapas.Pages
         Squaere squere = new Squaere();
         private async Task game()
         {
+            Console.WriteLine(gameIsRunning + " A VER");
             while (gameIsRunning)
             {
+                Console.WriteLine(gameIsRunning + " A VER");
                 currentTime--;
                 if (currentTime == 0)
                 {
@@ -152,7 +164,7 @@ namespace BrillaChiapas.Pages
                     gameIsRunning = false;
                 }
                 MovImagen();
-                await Task.Delay(3000);
+                await Task.Delay(1000);
                
             }
         }

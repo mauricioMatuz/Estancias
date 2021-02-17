@@ -14,6 +14,11 @@ namespace BrillaChiapas.Model
         {
             set;get;
         }
+        public int nivel
+        {
+            set;get;
+        }
+
         public int indice
         {
             set; get;
