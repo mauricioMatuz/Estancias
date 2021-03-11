@@ -1,13 +1,16 @@
-﻿<div class="square  @modelPrincipal.style" @onmouseup="ValidateHit"></div>
+﻿
+<div class="square  @modelPrincipal.style" @onmouseup="ValidateHit" ></div>
+
 
 
 @foreach (var sonido in sonidos)
 {
-    @if (sonido.reproduciendo)
+    @if (sonido.reproduciendo && modelPrincipal.Sonido >0)
     {
         <audio src="@sonido.rutaSonido" typeof="audio/wav" autoplay="autoplay"></audio>
     }
 }
+
 
 
 @code {
@@ -23,7 +26,7 @@
         get; set;
     }
 
-
+    
     private void ValidateHit()
     {
         onMouseUp.InvokeAsync(new EventArgs());
@@ -44,7 +47,7 @@
         public bool reproduciendo { get; set; }
         public string rutaSonido { get; set; }
     }
-    
+
     Sonido[] sonidos = new Sonido[]
     {
         new Sonido {reproduciendo = false, rutaSonido = "sound/correcto.wav"},

@@ -12,11 +12,12 @@ namespace BrillaChiapas.Pages
         private int score = 0;
         private int currentTime = 20;
         int hitPosicion = 0;
+        int time = 2500;
         private String message = " ";
         bool gameIsRunning = true;
         int[] posicionPrds;
         public List<PaginaPrincipalModel> matriz { get; set; } = new List<PaginaPrincipalModel>();
-
+        public List<PaginaPrincipalModel> GameOver { get; set; } = new List<PaginaPrincipalModel>();
         public void prueba()
         {
             posicionPrds = Random(0, 12);
@@ -48,6 +49,7 @@ namespace BrillaChiapas.Pages
                 item.Social = false;
                 item.Solidaridad = false;
                 item.Verde = false;
+                item.Over = false;
             }
             posicionPrds = Random(0, 12);
             int a = 0;
@@ -89,26 +91,26 @@ namespace BrillaChiapas.Pages
             message = " ";
             gameIsRunning = true;
             await game();
-
         }
+
+
         private void MouseAction(PaginaPrincipalModel model)
         {
-            
-            foreach (var item in matriz)
-            {
-                item.Acerto = false;
-                item.Ciudadano = false;
-                item.Independiente = false;
-                item.Morena = false;
-                item.Pan = false;
-                item.Pri = false;
-                item.Proge = false;
-                item.Pt = false;
-                item.Social = false;
-                item.Solidaridad = false;
-                item.Verde = false;
-            }
-            if (model.id == hitPosicion)
+            //foreach (var item in matriz)
+            //{
+            //    item.Acerto = false;
+            //    item.Ciudadano = false;
+            //    item.Independiente = false;
+            //    item.Morena = false;
+            //    item.Pan = false;
+            //    item.Pri = false;
+            //    item.Proge = false;
+            //    item.Pt = false;
+            //    item.Social = false;
+            //    item.Solidaridad = false;
+            //    item.Verde = false;
+            //}
+            if (model.id == hitPosicion && currentTime > 0)
             {
                 matriz[posicionPrds[0]].Acerto = true;
                 matriz[posicionPrds[11]].Ciudadano = true;
@@ -125,11 +127,30 @@ namespace BrillaChiapas.Pages
                 hitPosicion = posicionPrds[0];
                 score += 1;
                 model.indice = 0;
+                time = 1000;
             }
             else
             {
                 model.indice = 1;
+                time = 1000;
+                if (currentTime == 0)
+                {
+                    matriz[posicionPrds[0]].Inicio = true;
+                    matriz[posicionPrds[11]].Ciudadano = true;
+                    matriz[posicionPrds[1]].Independiente = true;
+                    matriz[posicionPrds[2]].Independiente = true;
+                    matriz[posicionPrds[3]].Morena = true;
+                    matriz[posicionPrds[4]].Pan = true;
+                    matriz[posicionPrds[5]].Pri = true;
+                    matriz[posicionPrds[6]].Proge = true;
+                    matriz[posicionPrds[7]].Pt = true;
+                    matriz[posicionPrds[8]].Social = true;
+                    matriz[posicionPrds[9]].Solidaridad = true;
+                    matriz[posicionPrds[10]].Verde = true;
+                }
             }
+            model.Sonido = currentTime;
+            time = 2500;
         }
         public int[] Random(int inico, int fin)
         {
@@ -150,13 +171,11 @@ namespace BrillaChiapas.Pages
             }
             return guardarNumero;
         }
-        Squaere squere = new Squaere();
+      
         private async Task game()
         {
-            Console.WriteLine(gameIsRunning + " A VER");
             while (gameIsRunning)
             {
-                Console.WriteLine(gameIsRunning + " A VER");
                 currentTime--;
                 if (currentTime == 0)
                 {
@@ -164,15 +183,15 @@ namespace BrillaChiapas.Pages
                     gameIsRunning = false;
                 }
                 MovImagen();
-                await Task.Delay(1000);
-               
+                Console.WriteLine(time + " TIME");
+                await Task.Delay(time);
             }
         }
 
         protected override async void OnInitialized()
         {
+           
             await game();
-
         }
     }
 }

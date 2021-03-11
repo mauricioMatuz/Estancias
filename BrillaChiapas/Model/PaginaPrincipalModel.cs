@@ -9,6 +9,7 @@ namespace BrillaChiapas.Model
     {
         private bool inicio;
         private bool acerto;
+        private bool gameOver;
       
         public int id
         {
@@ -225,6 +226,27 @@ namespace BrillaChiapas.Model
                     style = "";
                 }
             }
+        }
+
+        public bool Over
+        {
+            get => gameOver;
+            set
+            {
+                gameOver = value;
+                if (gameOver)
+                {
+                    style = "gameOver";
+                }
+                else
+                {
+                    style = "";
+                }
+            }
+        }
+        public int Sonido
+        {
+            set; get;
         }
 
     }

@@ -7,21 +7,31 @@
 </head>
 <body>
     <div class="fondo">
-        <div class="seccion">
+        <div class="seccion contenedor">
             <h1>Boleta Electoral</h1>
             <h2>Puntos: @score</h2>
             <h2>Tiempo restante: @currentTime</h2>
-            <h2>@message</h2>
-            <button type="submit" class="button" @onclick="() => BotonReicioAsync()">REINICIO</button>
+            <div class="contenedor">
+                <div class="contenedor-mensaje">
+                    <button type="submit" class="btn-dark btn-lg" @onclick="() => BotonReicioAsync()">REINICIO</button>
+                    <h2>@message</h2>
+                </div>
+            </div>
         </div>
 
         <main>
-
             <div class="seccion contenedor">
                 <div class="board">
-                    @foreach (var model in matriz)
+                    @if (@currentTime > 0)
                     {
-                        <Squaere modelPrincipal="model" onMouseUp="() => MouseAction(model)"></Squaere>
+                        @foreach (var model in matriz)
+                        {
+                            <Squaere modelPrincipal="model" onMouseUp="() => MouseAction(model)"></Squaere>
+                        }
+                    }
+                    else
+                    {
+                        
                     }
                 </div>
             </div>
