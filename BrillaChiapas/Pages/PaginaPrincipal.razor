@@ -5,37 +5,32 @@
 <head>
     <link rel="stylesheet" href="~/css/app.css" />
 </head>
-<body>
+<body class="body">
     <div class="fondo">
         <div class="seccion contenedor">
-            <h1>Boleta Electoral</h1>
-            <h2>Puntos: @score</h2>
-            <h2>Tiempo restante: @currentTime</h2>
-            <div class="contenedor">
-                <div class="contenedor-mensaje">
-                    <button type="submit" class="btn-dark btn-lg" @onclick="() => BotonReicioAsync()">REINICIO</button>
-                    <h2>@message</h2>
+            <div >
+                <h1>Boleta Electoral</h1>
+                <h2>Puntos: @score</h2>
+                <h2>Tiempo restante: @currentTime</h2>
+                <div class="contenedor">
+                    <div class="contenedor-mensaje">
+                        <button type="submit" class="btn-dark btn-lg" @onclick="() => BotonReicioAsync()">REINICIO</button>
+                        <h2>@message</h2>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <main>
-            <div class="seccion contenedor">
-                <div class="board">
-                    @if (@currentTime > 0)
-                    {
+            <main>
+                <div>
+                    <div class="board">
                         @foreach (var model in matriz)
-                        {
-                            <Squaere modelPrincipal="model" onMouseUp="() => MouseAction(model)"></Squaere>
-                        }
-                    }
-                    else
                     {
-                        
+                        <Squaere modelPrincipal="model" onMouseUp="() => MouseAction(model)"></Squaere>
                     }
+                    </div>
                 </div>
-            </div>
-        </main>
+            </main>
+        </div>
     </div>
 </body>
 </html>
