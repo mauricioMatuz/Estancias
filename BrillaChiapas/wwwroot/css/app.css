@@ -150,9 +150,8 @@ body {
             justify-content: center;
             align-items: center;
             flex-wrap: wrap;
-            width: 80vw;
-            height: 20vh;
-            margin: auto;
+            width: 100%;
+            height: 75vh;
         }
         .square {
             width: 15rem;
