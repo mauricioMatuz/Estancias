@@ -145,21 +145,76 @@ body {
             background-size: cover;
         }
         .board {
-            display: flex;
-            flex-flow: row wrap;
+          /*  display: flex;
+            flex-flow: row wrap;*/
             justify-content: center;
             align-items: center;
-            flex-wrap: wrap;
-            width: 100%;
-            height: 75vh;
+           /* flex-wrap: wrap;*/
+            width: 75vw;
+            height: 25vh;
         }
         .square {
-            width: 15rem;
-            height: 15rem;
+            width: 20vw;
+            height: 15vh;
             border-style: solid;
             border-color: black;
         }
 
+    }
+    @media(max-width:680px){
+        .board {
+            /*  display: flex;
+            flex-flow: row wrap;*/
+            justify-content: center;
+            align-items: center;
+            /* flex-wrap: wrap;*/
+            width: 75vw;
+            height: 25vh;
+        }
+
+        .square {
+            width: 18.9vw;
+            height: 12.9vh;
+            border-style: solid;
+            border-color: black;
+        }
+    }
+
+    @media(max-with:625px){
+        .board {
+            /*  display: flex;
+            flex-flow: row wrap;*/
+            justify-content: center;
+            align-items: center;
+            /* flex-wrap: wrap;*/
+            width: 75vw;
+            height: 25vh;
+        }
+
+        .square {
+            width: 8vw;
+            height: 4vh;
+            border-style: solid;
+            border-color: black;
+        }
+    }
+    @media(max-width:400px ){
+        .board {
+            /*  display: flex;
+            flex-flow: row wrap;*/
+            justify-content: center;
+            align-items: center;
+            /* flex-wrap: wrap;*/
+            width: 75vw;
+            height: 25vh;
+        }
+
+        .square {
+            width: 25vw;
+            height: 10vh;
+            border-style: solid;
+            border-color: black;
+        }
     }
 
     
