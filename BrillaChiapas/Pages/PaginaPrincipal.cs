@@ -17,7 +17,6 @@ namespace BrillaChiapas.Pages
         bool gameIsRunning = true;
         int[] posicionPrds;
         public List<PaginaPrincipalModel> matriz { get; set; } = new List<PaginaPrincipalModel>();
-        public List<PaginaPrincipalModel> GameOver { get; set; } = new List<PaginaPrincipalModel>();
         public void prueba()
         {
             posicionPrds = Random(0, 12);
@@ -81,6 +80,22 @@ namespace BrillaChiapas.Pages
                 a++;
             }
             hitPosicion = posicionPrds[0];
+            if (currentTime == 0)
+            {
+                matriz[posicionPrds[0]].Over = true;
+                matriz[posicionPrds[11]].Over = true;
+                matriz[posicionPrds[1]].Over = true;
+                matriz[posicionPrds[2]].Over = true;
+                matriz[posicionPrds[3]].Over = true;
+                matriz[posicionPrds[4]].Over = true;
+                matriz[posicionPrds[5]].Over = true;
+                matriz[posicionPrds[6]].Over = true;
+                matriz[posicionPrds[7]].Over = true;
+                matriz[posicionPrds[8]].Over = true;
+                matriz[posicionPrds[9]].Over = true;
+                matriz[posicionPrds[10]].Over = true;
+                Console.WriteLine("SI ENTRO AL ELSE");
+            }
             StateHasChanged();
         }
 
@@ -133,25 +148,13 @@ namespace BrillaChiapas.Pages
             {
                 model.indice = 1;
                 time = 1000;
-                if (currentTime == 0)
-                {
-                    matriz[posicionPrds[0]].Inicio = true;
-                    matriz[posicionPrds[11]].Ciudadano = true;
-                    matriz[posicionPrds[1]].Independiente = true;
-                    matriz[posicionPrds[2]].Independiente = true;
-                    matriz[posicionPrds[3]].Morena = true;
-                    matriz[posicionPrds[4]].Pan = true;
-                    matriz[posicionPrds[5]].Pri = true;
-                    matriz[posicionPrds[6]].Proge = true;
-                    matriz[posicionPrds[7]].Pt = true;
-                    matriz[posicionPrds[8]].Social = true;
-                    matriz[posicionPrds[9]].Solidaridad = true;
-                    matriz[posicionPrds[10]].Verde = true;
-                }
             }
+           
             model.Sonido = currentTime;
             time = 2500;
         }
+
+        
         public int[] Random(int inico, int fin)
         {
             int[] guardarNumero = new int[12];
@@ -181,6 +184,7 @@ namespace BrillaChiapas.Pages
                 {
                     message = "FIN DEL JUEGO";
                     gameIsRunning = false;
+
                 }
                 MovImagen();
                 Console.WriteLine(time + " TIME");

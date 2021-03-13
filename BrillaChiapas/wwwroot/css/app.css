@@ -111,7 +111,7 @@ body {
     background-size: cover;
 }
 
-.gameOver{
+.gameOvers{
    background-image: url('../img/game.jpg');
    background-size: cover;
 }

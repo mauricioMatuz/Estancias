@@ -236,7 +236,7 @@ namespace BrillaChiapas.Model
                 gameOver = value;
                 if (gameOver)
                 {
-                    style = "gameOver";
+                    style = "gameOvers";
                 }
                 else
                 {
