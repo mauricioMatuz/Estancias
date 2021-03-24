@@ -17,19 +17,31 @@ namespace BrillaChiapas.Pages
         bool gameIsRunning = true;
         int[] posicionPrds;
         public List<PaginaPrincipalModel> matriz { get; set; } = new List<PaginaPrincipalModel>();
+        public List<PaginaPrincipalModel> matriz2 { get; set; } = new List<PaginaPrincipalModel>();
         public void prueba()
         {
             posicionPrds = Random(0, 12);
         }
         public PaginaPrincipal()
         {
-            for (int i = 0; i < 12; i++)
+            if (currentTime > 0)
             {
-                //for(int x = 0; x < 6; x++)
-                matriz.Add(new PaginaPrincipalModel
+                for (int i = 0; i < 12; i++)
                 {
-                    id = i
-                });
+                    //for(int x = 0; x < 6; x++)
+                    matriz.Add(new PaginaPrincipalModel
+                    {
+                        id = i
+                    });
+                }
+            }
+            else
+            {
+                //matriz2.Add(new PaginaPrincipalModel
+                //{
+                //    id = 1
+                //}); 
+                Console.Write("SI ENTRO L ELSE DE LA MATRIX");
             }
         }
 
@@ -82,19 +94,26 @@ namespace BrillaChiapas.Pages
             hitPosicion = posicionPrds[0];
             if (currentTime == 0)
             {
-                matriz[posicionPrds[0]].Over = true;
-                matriz[posicionPrds[11]].Over = true;
-                matriz[posicionPrds[1]].Over = true;
-                matriz[posicionPrds[2]].Over = true;
-                matriz[posicionPrds[3]].Over = true;
-                matriz[posicionPrds[4]].Over = true;
-                matriz[posicionPrds[5]].Over = true;
-                matriz[posicionPrds[6]].Over = true;
-                matriz[posicionPrds[7]].Over = true;
-                matriz[posicionPrds[8]].Over = true;
-                matriz[posicionPrds[9]].Over = true;
-                matriz[posicionPrds[10]].Over = true;
-                Console.WriteLine("SI ENTRO AL ELSE");
+                //matriz[posicionPrds[0]].Over = true;
+                //matriz[posicionPrds[11]].Over = true;
+                //matriz[posicionPrds[1]].Over = true;
+                //matriz[posicionPrds[2]].Over = true;
+                //matriz[posicionPrds[3]].Over = true;
+                //matriz[posicionPrds[4]].Over = true;
+                //matriz[posicionPrds[5]].Over = true;
+                //matriz[posicionPrds[6]].Over = true;
+                //matriz[posicionPrds[7]].Over = true;
+                //matriz[posicionPrds[8]].Over = true;
+                //matriz[posicionPrds[9]].Over = true;
+                //matriz[posicionPrds[10]].Over = true;
+                matriz.Clear();
+                matriz.Add(new PaginaPrincipalModel
+                {
+                    id = 1
+                });
+                matriz[0].Over = true;
+                Console.WriteLine("SI BORRA");
+                
             }
             StateHasChanged();
         }

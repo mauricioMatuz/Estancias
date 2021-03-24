@@ -17,6 +17,7 @@ body {
 /**globales*/
 .contenedor {
     width: 60vw;
+    height: 40vh;
     margin: 0 auto;
 }
 
@@ -73,7 +74,8 @@ body {
 }
 .independiente {
     background-image: url('../img/candidato.png');
-    background-size: contain;
+    background-size: cover;
+    align-content: center;
 }
 .morena {
     background-image: url('../img/amlo.png');
@@ -137,30 +139,30 @@ body {
         right: 0.75rem;
         top: 0.5rem;
     }
-  
-    @media(max-width: 720px){
-     
-        .fondo {
-            background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
-            background-size: cover;
-        }
-        .board {
-          /*  display: flex;
-            flex-flow: row wrap;*/
-            justify-content: center;
-            align-items: center;
-           /* flex-wrap: wrap;*/
-            width: 75vw;
-            height: 25vh;
-        }
-        .square {
-            width: 20vw;
-            height: 15vh;
-            border-style: solid;
-            border-color: black;
-        }
 
+@media screen and (max-width: 720px) {
+
+    .fondo {
+        background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+        background-size: cover;
     }
+
+    .board {
+
+        justify-content: center;
+        align-items: center;
+
+        width: 100vw;
+        height: 100vh;
+    }
+
+    .square {
+        width: 40vw;
+        height: 25vh;
+        border-style: solid;
+        border-color: black;
+    }
+}
     @media(max-width:680px){
         .board {
             /*  display: flex;
@@ -173,8 +175,9 @@ body {
         }
 
         .square {
-            width: 18.9vw;
-            height: 12.9vh;
+         
+            width: 25vw;
+            height: 19vh;
             border-style: solid;
             border-color: black;
         }
@@ -192,12 +195,99 @@ body {
         }
 
         .square {
-            width: 8vw;
-            height: 4vh;
+       
+            width: 20vw;
+            height: 13vh;
             border-style: solid;
             border-color: black;
         }
     }
+
+    @media(max-width:600px){
+        .board {
+            /*  display: flex;
+            flex-flow: row wrap;*/
+            justify-content: center;
+            align-items: center;
+            /* flex-wrap: wrap;*/
+            width: 75vw;
+            height: 25vh;
+        }
+
+        .square {
+            width: 25vw;
+            height: 15vh;
+            border-style: solid;
+            border-color: black;
+        }
+    }
+
+    @media(max-width:530px) {
+        .board {
+            /*  display: flex;
+                    flex-flow: row wrap;*/
+            justify-content: center;
+            align-items: center;
+            /* flex-wrap: wrap;*/
+            width: 75vw;
+            height: 25vh;
+        }
+
+        .square {
+            width: 25vw;
+            height: 13vh;
+            border-style: solid;
+            border-color: black;
+        }
+    }
+
+    @media(max-width:480px) {
+
+        h1{
+            font-size: 2.5rem;
+        }
+        .board {
+            /*  display: flex;
+                    flex-flow: row wrap;*/
+            justify-content: center;
+            align-items: center;
+            /* flex-wrap: wrap;*/
+            width: 75vw;
+            height: 25vh;
+        }
+
+        .square {
+            width: 25vw;
+            height: 13vh;
+            border-style: solid;
+            border-color: black;
+        }
+    }
+
+    @media(max-width:450px) {
+
+        h1 {
+            font-size: 2.5rem;
+        }
+
+        .board {
+            /*  display: flex;
+                        flex-flow: row wrap;*/
+            justify-content: center;
+            align-items: center;
+            /* flex-wrap: wrap;*/
+            width: 75vw;
+            height: 25vh;
+        }
+
+        .square {
+            width: 25vw;
+            height: 12vh;
+            border-style: solid;
+            border-color: black;
+        }
+    }
+
     @media(max-width:400px ){
         .board {
             /*  display: flex;
