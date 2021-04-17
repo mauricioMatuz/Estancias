@@ -7,29 +7,26 @@
 </head>
 <body class="body">
     <div class="fondo">
-        <div class="seccion contenedor">
-            <div >
+        <div class="container center-h center-v">
+            <div class="child">
                 <h1>Boleta Electoral</h1>
                 <h2>Puntos: @score</h2>
                 <h2>Tiempo restante: @currentTime</h2>
-              
-                    <div class="contenedor-mensaje">
-                        <button type="submit" class="btn-dark btn-lg" @onclick="() => BotonReicioAsync()">REINICIO</button>
-                        <h2>@message</h2>
-                    </div>
-               
-            </div>
-
-            <main>
-                <div>
-                    <div class="board">
-                        @foreach (var model in matriz)
-                    {
-                        <Squaere modelPrincipal="model" onMouseUp="() => MouseAction(model)"></Squaere>
-                    }
-                    </div>
+                <div class="contenedor-mensaje">
+                    <button type="submit" class="btn-dark btn-lg" @onclick="() => BotonReicioAsync()">REINICIO</button>
+                    <h2>@message</h2>
                 </div>
-            </main>
+                <main>
+                    <div>
+                        <div class="board">
+                            @foreach (var model in matriz)
+                    {
+                            <Squaere modelPrincipal="model" onMouseUp="() => MouseAction(model)"></Squaere>
+                    }
+                        </div>
+                    </div>
+                </main>
+            </div>
         </div>
     </div>
 </body>
@@ -38,7 +35,7 @@
 
 @code{
 
-    
+
 
 
 }

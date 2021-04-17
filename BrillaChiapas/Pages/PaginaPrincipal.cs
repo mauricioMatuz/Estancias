@@ -24,8 +24,8 @@ namespace BrillaChiapas.Pages
         }
         public PaginaPrincipal()
         {
-            if (currentTime > 0)
-            {
+           
+           
                 for (int i = 0; i < 12; i++)
                 {
                     //for(int x = 0; x < 6; x++)
@@ -34,15 +34,7 @@ namespace BrillaChiapas.Pages
                         id = i
                     });
                 }
-            }
-            else
-            {
-                //matriz2.Add(new PaginaPrincipalModel
-                //{
-                //    id = 1
-                //}); 
-                Console.Write("SI ENTRO L ELSE DE LA MATRIX");
-            }
+            
         }
 
         private void MovImagen()
@@ -94,18 +86,7 @@ namespace BrillaChiapas.Pages
             hitPosicion = posicionPrds[0];
             if (currentTime == 0)
             {
-                //matriz[posicionPrds[0]].Over = true;
-                //matriz[posicionPrds[11]].Over = true;
-                //matriz[posicionPrds[1]].Over = true;
-                //matriz[posicionPrds[2]].Over = true;
-                //matriz[posicionPrds[3]].Over = true;
-                //matriz[posicionPrds[4]].Over = true;
-                //matriz[posicionPrds[5]].Over = true;
-                //matriz[posicionPrds[6]].Over = true;
-                //matriz[posicionPrds[7]].Over = true;
-                //matriz[posicionPrds[8]].Over = true;
-                //matriz[posicionPrds[9]].Over = true;
-                //matriz[posicionPrds[10]].Over = true;
+    
                 matriz.Clear();
                 matriz.Add(new PaginaPrincipalModel
                 {
@@ -119,6 +100,15 @@ namespace BrillaChiapas.Pages
         }
 
         private async Task BotonReicioAsync() {
+            matriz.Clear();
+            for (int i = 0; i < 12; i++)
+            {
+                //for(int x = 0; x < 6; x++)
+                matriz.Add(new PaginaPrincipalModel
+                {
+                    id = i
+                });
+            }
             score = 0;
             currentTime = 20;
             hitPosicion = 0;
